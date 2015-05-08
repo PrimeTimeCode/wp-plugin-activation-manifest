@@ -1,0 +1,22 @@
+{
+    "name": "primetime/wp-plugin-activation-manifest",
+    "description": "Simple file-based plugin activation control for WordPress",
+    "require": {
+        "composer/installers": "~1.0",
+        "symfony/yaml": "~2.6",
+        "primetime/wp-plugin-control": "dev-master"
+    },
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Evan Mattson",
+            "email": "me@aaemnnost.tv"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PrimeTime\\WordPress\\PluginManifest\\": ["src/"]
+        }
+    },
+    "minimum-stability": "dev"
+}
