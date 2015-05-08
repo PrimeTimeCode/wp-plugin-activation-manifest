@@ -4,7 +4,7 @@
     "require": {
         "composer/installers": "~1.0",
         "symfony/yaml": "~2.6",
-        "primetime/wp-plugin-control": "dev-master"
+        "primetime/wp-plugin-control": "~0.1.0"
     },
     "license": "GPL-2.0",
     "authors": [
@@ -17,6 +17,5 @@
         "psr-4": {
             "PrimeTime\\WordPress\\PluginManifest\\": ["src/"]
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
