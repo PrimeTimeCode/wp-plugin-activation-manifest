@@ -60,6 +60,12 @@ class Manifest
         return $this->filter_allowed_keys($data);
     }
 
+    /**
+     * [filter_by_key description]
+     * @param  [type] $array        [description]
+     * @param  [type] $allowed_keys [description]
+     * @return [type]               [description]
+     */
     protected function filter_by_key( $array, $allowed_keys )
     {
         return array_filter($array, function($key) use ($allowed_keys) {
@@ -68,6 +74,8 @@ class Manifest
     }
 
     /**
+     * Reduces data to a set limited to keys of the allowed environments
+     * 
      * @param $data
      *
      * @return array
@@ -91,6 +99,9 @@ class Manifest
     }
 
     /**
+     * Filter the values of the data to only allow for
+     * allowed key:values 
+     * 
      * @param $data
      *
      * @return array
