@@ -32,19 +32,20 @@ class Activation
 
     protected function enforce( $manifest )
     {
-        if ( !empty($manifest[ 'enable' ]) )
+        if ( ! empty($manifest[ 'enable' ]) ) {
             new EnablePlugins($manifest[ 'enable' ]);
+        }
 
-        if ( !empty($manifest[ 'disable' ]) )
+        if ( ! empty($manifest[ 'disable' ]) ) {
             new DisablePlugins($manifest[ 'disable' ]);
+        }
+        
+        if ( ! empty($manifest[ 'network-enable' ]) ) {
+            new NetworkEnablePlugins($manifest[ 'network-enable' ]);
+        }
 
-        if ( is_multisite() )
-        {
-            if ( !empty($manifest[ 'network-enable' ]) )
-                new NetworkEnablePlugins($manifest[ 'network-enable' ]);
-
-            if ( !empty($manifest[ 'network-disable' ]) )
-                new NetworkDisablePlugins($manifest[ 'network-disable' ]);
+        if ( ! empty($manifest[ 'network-disable' ]) ) {
+            new NetworkDisablePlugins($manifest[ 'network-disable' ]);
         }
     }
 
