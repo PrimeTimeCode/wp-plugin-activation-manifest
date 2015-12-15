@@ -45,7 +45,7 @@ class Manifest
      */
     public function get_data()
     {
-        return $this->data;
+        return (array) $this->data;
     }
 
     /**
