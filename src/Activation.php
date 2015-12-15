@@ -16,9 +16,10 @@ class Activation
         $this->apply();
     }
 
-    public static function set( $config_file )
+    public static function set( $config_file, $environment = null )
     {
-        return new static(new Manifest($config_file));
+        $manifest = new Manifest($config_file, $environment);
+        $activation = new static($manifest->load());
     }
 
     public function apply()
