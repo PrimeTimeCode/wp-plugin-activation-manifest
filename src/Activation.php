@@ -21,7 +21,7 @@ class Activation
         return new static(new Manifest($config_file));
     }
 
-    protected function apply()
+    public function apply()
     {
         array_map([$this, 'enforce'], $this->manifest->get_data());
     }
