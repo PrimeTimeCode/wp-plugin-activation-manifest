@@ -13,13 +13,14 @@ class Activation
     public function __construct( Manifest $manifest )
     {
         $this->manifest = $manifest;
-        $this->apply();
     }
 
     public static function set( $config_file, $environment = null )
     {
         $manifest = new Manifest($config_file, $environment);
         $activation = new static($manifest->load());
+
+        return $activation->apply();
     }
 
     public function apply()
