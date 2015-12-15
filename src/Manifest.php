@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Exception\ParseException;
 
 class Manifest
 {
-    private $data;
+    protected $data;
 
 
     /**
@@ -39,14 +39,14 @@ class Manifest
      *
      * @return array
      */
-    private function sanitize( $data )
+    protected function sanitize( $data )
     {
         $data = $this->filter_allowed_environments($data);
 
         return $this->filter_allowed_keys($data);
     }
 
-    private function filter_by_key( $array, $allowed_keys )
+    protected function filter_by_key( $array, $allowed_keys )
     {
         return array_filter($array, function($key) use ($allowed_keys) {
             return in_array($key, $allowed_keys);
@@ -58,7 +58,7 @@ class Manifest
      *
      * @return array
      */
-    private function filter_allowed_environments( $data )
+    protected function filter_allowed_environments( $data )
     {
         $environments = [
             'global',
@@ -75,7 +75,7 @@ class Manifest
      *
      * @return array
      */
-    private function filter_allowed_keys( $data )
+    protected function filter_allowed_keys( $data )
     {
         $allowed_keys = [
             'enable',

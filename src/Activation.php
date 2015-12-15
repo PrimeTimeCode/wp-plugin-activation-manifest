@@ -8,7 +8,9 @@ use PrimeTime\WordPress\PluginControl\NetworkDisablePlugins;
 
 class Activation
 {
-    private function __construct( Manifest $manifest )
+    protected $manifest;
+
+    public function __construct( Manifest $manifest )
     {
         $this->manifest = $manifest;
         $this->apply();
@@ -19,12 +21,12 @@ class Activation
         return new static(new Manifest($config_file));
     }
 
-    private function apply()
+    protected function apply()
     {
         array_map([$this, 'enforce'], $this->manifest->get_data());
     }
 
-    private function enforce( $manifest )
+    protected function enforce( $manifest )
     {
         if ( !empty($manifest[ 'enable' ]) )
             new EnablePlugins($manifest[ 'enable' ]);
