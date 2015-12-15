@@ -6,20 +6,27 @@ use Symfony\Component\Yaml\Exception\ParseException;
 
 class Manifest
 {
+    protected $filepath;
+    
+    protected $environment;
+
     protected $data;
 
 
     /**
      * Manifest constructor.
      */
-    public function __construct( $filepath )
+    public function __construct( $filepath, $environment = null )
     {
-        try
-        {
-            $this->data = $this->sanitize( Yaml::parse($filepath) );
-        }
-        catch ( ParseException $e )
-        {
+        $this->filepath = realpath($filepath);
+        $this->environment = $environment;
+    }
+
+    public function load()
+    {
+        try {
+            $this->data = $this->sanitize(Yaml::parse($this->filepath));
+        } catch ( ParseException $e ) {
             wp_die("<h1>Error parsing $filepath</h1>" . $e->getMessage(), 'Plugin Manifest Error');
         }
     }
