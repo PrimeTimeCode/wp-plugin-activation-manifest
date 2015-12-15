@@ -70,7 +70,7 @@ class Manifest
      */
     protected function filter_by_key( $array, $allowed_keys )
     {
-        return array_filter($array, function($key) use ($allowed_keys) {
+        return array_filter((array) $array, function($key) use ($allowed_keys) {
             return in_array($key, $allowed_keys);
         }, ARRAY_FILTER_USE_KEY);
     }
@@ -112,6 +112,6 @@ class Manifest
     {
         return array_map(function ( $value ) {
             return $this->filter_by_key($value, static::$allowed_keys);
-        }, $data);
+        }, (array) $data);
     }
 }
