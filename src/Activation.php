@@ -24,6 +24,8 @@ class Activation
     public function apply()
     {
         array_map([$this, 'enforce'], $this->manifest->get_data());
+
+        return $this;
     }
 
     protected function enforce( $manifest )

@@ -36,6 +36,8 @@ class Manifest
         } catch ( ParseException $e ) {
             wp_die("<h1>Error parsing $filepath</h1>" . $e->getMessage(), 'Plugin Manifest Error');
         }
+
+        return $this;
     }
 
     /**
