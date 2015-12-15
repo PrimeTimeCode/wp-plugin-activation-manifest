@@ -74,14 +74,20 @@ class Manifest
      */
     protected function filter_allowed_environments( $data )
     {
-        $environments = [
+        return $this->filter_by_key($data, $this->environments());
+    }
+
+    /**
+     * Returns an array of environment keys
+     * 
+     * @return [type] [description]
+     */
+    protected function environments()
+    {
+        return array_filter([
             'global',
-            WP_ENV
-        ];
-
-        $data = $this->filter_by_key($data, $environments);
-
-        return $data;
+            $this->environment
+        ]);
     }
 
     /**
