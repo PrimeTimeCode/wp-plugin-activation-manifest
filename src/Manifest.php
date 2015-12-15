@@ -12,6 +12,13 @@ class Manifest
 
     protected $data;
 
+    protected static $allowed_keys = [
+        'enable',
+        'disable',
+        'network-enable',
+        'network-disable'
+    ];
+
 
     /**
      * Manifest constructor.
@@ -84,16 +91,8 @@ class Manifest
      */
     protected function filter_allowed_keys( $data )
     {
-        $allowed_keys = [
-            'enable',
-            'disable',
-            'network-enable',
-            'network-disable'
-        ];
-
-        return array_map(function ( $value ) use ( $allowed_keys )
-        {
-            return $this->filter_by_key($value, $allowed_keys);
+        return array_map(function ( $value ) {
+            return $this->filter_by_key($value, static::$allowed_keys);
         }, $data);
     }
 }
