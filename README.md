@@ -46,6 +46,6 @@ require('vendor/autoload.php');
 In the example above, `WP_ENV` is an environment variable defining the name of the environment (eg: development, staging, production).
 This environment name should match to a top-level key in the yaml file.
 
-Environent configuration is applied after the `global` configuration and will take precedence over it.
+Environment configuration is applied after the `global` configuration and will take precedence over it.
 
 That's it!
