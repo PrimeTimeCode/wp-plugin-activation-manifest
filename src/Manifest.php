@@ -34,7 +34,7 @@ class Manifest
         try {
             $this->data = $this->sanitize(Yaml::parse($this->filepath));
         } catch ( ParseException $e ) {
-            wp_die("<h1>Error parsing $filepath</h1>" . $e->getMessage(), 'Plugin Manifest Error');
+            return wp_die("<h1>Error parsing {$this->filepath}</h1>" . $e->getMessage(), 'Plugin Manifest Error');
         }
 
         return $this;
