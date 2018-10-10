@@ -32,10 +32,12 @@ class Manifest
     public function load()
     {
         try {
-            $this->data = $this->sanitize(Yaml::parse($this->filepath));
+            $parsed = Yaml::parseFile($this->filepath);
         } catch ( ParseException $e ) {
             return wp_die("<h1>Error parsing {$this->filepath}</h1>" . $e->getMessage(), 'Plugin Manifest Error');
         }
+
+        $this->data = $this->sanitize($parsed);
 
         return $this;
     }
