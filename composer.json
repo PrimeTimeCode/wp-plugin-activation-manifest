@@ -6,7 +6,7 @@
         "symfony/yaml": "~2.6",
         "primetime/wp-plugin-control": "~0.1.0"
     },
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Evan Mattson",
