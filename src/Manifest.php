@@ -53,7 +53,7 @@ class Manifest
     /**
      * Sanitize the parsed data
      *
-     * @param $data
+     * @param array $data
      *
      * @return array
      */
@@ -65,14 +65,13 @@ class Manifest
     }
 
     /**
-     * [filter_by_key description]
-     * @param  [type] $array        [description]
-     * @param  [type] $allowed_keys [description]
-     * @return [type]               [description]
+     * @param  array $array
+     * @param  array $allowed_keys
+     * @return array
      */
     protected function filter_by_key( $array, $allowed_keys )
     {
-        return array_filter((array) $array, function($key) use ($allowed_keys) {
+        return array_filter((array) $array, function ($key) use ($allowed_keys) {
             return in_array($key, $allowed_keys);
         }, ARRAY_FILTER_USE_KEY);
     }
@@ -80,7 +79,7 @@ class Manifest
     /**
      * Reduces data to a set limited to keys of the allowed environments
      * 
-     * @param $data
+     * @param array $data
      *
      * @return array
      */
@@ -92,7 +91,7 @@ class Manifest
     /**
      * Returns an array of environment keys
      * 
-     * @return [type] [description]
+     * @return array
      */
     protected function environments()
     {
@@ -106,7 +105,7 @@ class Manifest
      * Filter the values of the data to only allow for
      * allowed key:values 
      * 
-     * @param $data
+     * @param array $data
      *
      * @return array
      */
