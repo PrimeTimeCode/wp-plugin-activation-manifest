@@ -6,7 +6,7 @@ use PrimeTime\WordPress\PluginControl\DisablePlugins;
 use PrimeTime\WordPress\PluginControl\NetworkEnablePlugins;
 use PrimeTime\WordPress\PluginControl\NetworkDisablePlugins;
 
-final class Activation
+class Activation
 {
     protected $manifest;
 
@@ -18,7 +18,7 @@ final class Activation
     public static function set( $config_file, $environment = null )
     {
         $manifest = new Manifest($config_file, $environment);
-        $activation = new static($manifest->load());
+        $activation = new self($manifest->load());
 
         return $activation->apply();
     }
