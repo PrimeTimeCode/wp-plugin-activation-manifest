@@ -6,7 +6,7 @@ use PrimeTime\WordPress\PluginControl\DisablePlugins;
 use PrimeTime\WordPress\PluginControl\NetworkEnablePlugins;
 use PrimeTime\WordPress\PluginControl\NetworkDisablePlugins;
 
-class Activation
+final class Activation
 {
     protected $manifest;
 
