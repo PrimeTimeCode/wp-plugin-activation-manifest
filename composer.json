@@ -1,5 +1,5 @@
 {
-    "name": "androlax2/wp-plugin-activation-manifest",
+    "name": "primetime/wp-plugin-activation-manifest",
     "description": "Simple file-based plugin activation control for WordPress",
     "require": {
         "php": "^5.6 || ^7.0",
