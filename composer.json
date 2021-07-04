@@ -19,7 +19,7 @@
             "email": "me@aaemnnost.tv"
         }
     ],
-    "version": "2.2.1",
+    "version": "1.1",
     "autoload": {
         "psr-4": {
             "PrimeTime\\WordPress\\PluginManifest\\": ["src/"]
