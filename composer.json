@@ -7,8 +7,8 @@
         "primetime/wp-plugin-control": "~0.1.0"
     },
     "repositories": [
-        { 
-            "type": "vcs", 
+        {
+            "type": "vcs",
             "url": "git@github.com:giuspe/wp-plugin-activation-manifest-php8.git"
         }
     ],
@@ -19,7 +19,6 @@
             "email": "me@aaemnnost.tv"
         }
     ],
-    "version": "1.1",
     "autoload": {
         "psr-4": {
             "PrimeTime\\WordPress\\PluginManifest\\": ["src/"]
