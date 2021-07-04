@@ -1,5 +1,5 @@
 {
-    "name": "primetime/wp-plugin-activation-manifest",
+    "name": "giuspe/wp-plugin-activation-manifest-php8",
     "description": "Simple file-based plugin activation control for WordPress",
     "require": {
         "php": "^5.6 || ^7.0 || ^8.0",
