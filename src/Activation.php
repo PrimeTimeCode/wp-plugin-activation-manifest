@@ -18,7 +18,7 @@ class Activation
     public static function set( $config_file, $environment = null )
     {
         $manifest = new Manifest($config_file, $environment);
-        $activation = new static($manifest->load());
+        $activation = new self($manifest->load());
 
         return $activation->apply();
     }
