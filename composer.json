@@ -2,7 +2,7 @@
     "name": "primetime/wp-plugin-activation-manifest",
     "description": "Simple file-based plugin activation control for WordPress",
     "require": {
-        "php": "^5.6 || ^7.0",
+        "php": "^5.6 || ^7.0 || ^8.0",
         "symfony/yaml": "^3.4 || ^4",
         "primetime/wp-plugin-control": "~0.1.0"
     },
